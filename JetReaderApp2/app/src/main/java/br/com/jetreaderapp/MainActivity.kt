@@ -6,14 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import br.com.jetreaderapp.navigation.ReaderNavigation
 import br.com.jetreaderapp.ui.theme.JetReaderAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,9 +32,7 @@ class MainActivity : ComponentActivity() {
 fun ReaderApp() {
     // A surface container using the 'background' color from the theme
     Surface(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(top = 46.dp),
+        modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.background
     ) {
         Column(

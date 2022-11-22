@@ -1,6 +1,7 @@
 package br.com.jetreaderapp.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -12,6 +13,7 @@ import br.com.jetreaderapp.screens.search.ReaderSearchScreen
 import br.com.jetreaderapp.screens.stats.ReaderStatsScreen
 import br.com.jetreaderapp.screens.update.ReaderUpdateScreen
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun ReaderNavigation() {
 
