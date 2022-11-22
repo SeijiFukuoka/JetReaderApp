@@ -18,6 +18,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import br.com.jetreaderapp.components.ReaderLogo
 import br.com.jetreaderapp.navigation.ReaderScreens
 import kotlinx.coroutines.delay
 
@@ -54,11 +55,7 @@ fun ReaderSplashScreen(navController: NavHostController) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-
-            Text(
-                text = "A. Reader", style = MaterialTheme.typography.h3,
-                color = Color.Red.copy(alpha = 0.5f)
-            )
+            ReaderLogo()
             Spacer(modifier = Modifier.height(15.dp))
             Text(
                 text = "\"Read. Change. Yourself\"",
@@ -68,3 +65,4 @@ fun ReaderSplashScreen(navController: NavHostController) {
         }
     }
 }
+
