@@ -31,13 +31,18 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import br.com.jetreaderapp.R
 import br.com.jetreaderapp.components.ReaderLogo
+import br.com.jetreaderapp.navigation.ReaderScreens
 
 @ExperimentalComposeUiApi
 @Composable
-fun ReaderLoginScreen(navController: NavHostController) {
+fun ReaderLoginScreen(
+    navController: NavHostController,
+    viewmodel: LoginScreenViewModel = viewModel()
+) {
     val showLoginForm = rememberSaveable { mutableStateOf(true) }
 
     Surface(
@@ -52,7 +57,9 @@ fun ReaderLoginScreen(navController: NavHostController) {
             ReaderLogo()
             if (showLoginForm.value) {
                 UserForm(loading = false, isCreateAccount = false) { email, password ->
-                    // todo - FB login
+                    viewmodel.signInWithEmailAndPassword(email, password){
+                        navController.navigate(ReaderScreens.HomeScreen.name)
+                    }
                 }
             } else {
                 UserForm(loading = false, isCreateAccount = true) { email, password ->
